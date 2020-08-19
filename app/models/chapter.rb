@@ -1,3 +1,3 @@
 class Chapter < ApplicationRecord
-  belongs_to :story, dependent: :delete_all
+  belongs_to :story, dependent: :destroy
 end

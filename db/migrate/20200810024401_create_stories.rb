@@ -5,6 +5,7 @@ class CreateStories < ActiveRecord::Migration[6.0]
       t.string :author
       t.integer :user_id
       t.text :description
+      t.string :img
       t.boolean :free
       t.integer :price
       t.integer :status
