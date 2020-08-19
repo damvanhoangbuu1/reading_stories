@@ -41,7 +41,7 @@ end
   s.author = Faker::Name.name
   s.free = true
   s.price = 0
-  s.img = "/assets/ (#{n+1}).jpg"
+  s.img = "/assets/stories/ (#{n+1}).jpg"
   s.category_id = category_id
   s.views = views
   s.description = Faker::Quotes::Shakespeare.romeo_and_juliet_quote
@@ -58,7 +58,7 @@ end
   s.author = Faker::Name.name
   s.free = false
   s.price = 2000
-  s.img = "/assets/ (#{n+1}).jpg"
+  s.img = "/assets/stories/ (#{n+1}).jpg"
   s.category_id = category_id
   s.views = views
   s.description = Faker::Quotes::Shakespeare.romeo_and_juliet_quote
@@ -91,8 +91,8 @@ end
   c.save
 end
 50.times do |i|
-    c = Relationship.new
-    c.user_id = r.rand(1..User.count)
-    c.story_id = r.rand(1..Story.count)
-    c.save
-  end
+  c = Relationship.new
+  c.user_id = r.rand(1..User.count)
+  c.story_id = r.rand(1..Story.count)
+  c.save
+end
