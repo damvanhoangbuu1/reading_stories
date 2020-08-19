@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2020_08_10_025807) do
     t.string "author"
     t.integer "user_id"
     t.text "description"
+    t.string "img"
     t.boolean "free"
     t.integer "price"
     t.integer "status"

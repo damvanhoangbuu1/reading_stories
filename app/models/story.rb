@@ -1,8 +1,8 @@
 class Story < ApplicationRecord
-  has_many :chapters, dependent: :delete_all
-  has_many :ratings, dependent: :delete_all
-  has_many :relationships, dependent: :delete_all
-  belongs_to :category, dependent: :delete_all
+  has_many :chapters, dependent: :destroy
+  has_many :ratings, dependent: :destroy
+  has_many :relationships, dependent: :destroy
+  belongs_to :category, dependent: :destroy
 
   enum status: {paused: 0, updating: 1, finished: 2}
 
