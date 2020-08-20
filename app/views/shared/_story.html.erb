@@ -1,12 +1,12 @@
 <% @stories.each do |i| %>
   <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
     <div class="card">
-      <a href="#" >
+      <%= link_to story_path(i) do %>
         <img src="<%= i.img %>" alt="<%= i.name %>" class="image-size-list">
         <div class="title">
           <p><%= i.name %></p>
         </div>
-      </a> 
+      <% end %> 
     </div>
   </div>
 <% end %>

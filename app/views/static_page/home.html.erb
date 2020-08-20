@@ -8,12 +8,12 @@
   <div class="row">
     <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
       <div class="big-card">
-        <a href="#">
+        <%= link_to story_path(@hot_stories[0]) do %>
           <img src="<%= @hot_stories[0].img %>" alt="<%= @hot_stories[0].name %>" class="big-image-size">
           <div class="big-title">
             <p><%= @hot_stories[0].name %></p>
           </div>
-        </a> 
+        <% end %>
       </div>
     </div>
     
@@ -23,12 +23,12 @@
           <% @hot_stories[1..@hot_stories.count].each do |i| %>
             <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
               <div class="card">
-                <a href="#" >
+                <%= link_to story_path(i) do %>
                   <img src="<%= i.img %>" alt="<%= i.name %>" class="image-size">
                   <div class="title">
                     <p><%= i.name %></p>
                   </div>
-                </a> 
+                <% end %> 
               </div>
             </div>
           <% end %>    
@@ -42,7 +42,5 @@
   <div class="row">
     <%= render  "shared/story" %>
   </div>
-  
-  
   
 </div>
