@@ -1,0 +1,81 @@
+
+<div class="container">
+
+  <div class="row">
+      
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+      <img class="full-img-size" src="<%= @story.img %>">
+    </div>
+      
+    
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      <h3><%= @story.name %></h3>
+      <p>Author: <%= @story.author %></p>
+      <p>Category: <%= link_to  @story.category.name, category_path(@story.category) %></p>
+      <% if @story.status = :updating %>
+        <p>Status: Updating</p>
+      <% elsif @story.status = :paused %>
+        <p>Status: Pasued</p>
+      <% else %>
+        <p>Status: Finished</p>
+      <% end %>
+      
+      <div class="row" style="margin-top: 20px;">
+        <button type="button" class="btn btn-success btn-lg" style="margin-left: 15px;">Read</button>          
+        <button type="button" class="btn btn-warning btn-lg" style="margin-left: 15px;">Follow</button>
+      </div>
+      
+    </div>
+    
+    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" style="text-align: center;">
+      <p>Has <%= @rating_count %> people rating</p>
+      <div class="star-total">
+        <span><%= @rating_value %></span>
+      </div>
+    </div>
+    
+  </div>
+  
+  
+  <div class="row">
+    
+    <div role="tabpanel" style="margin-top:15px;">
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active" style="width: 30%;">
+                <a href="#home" aria-controls="home" role="tab" data-toggle="tab">Description</a>
+            </li>
+            <li role="presentation" style="width: 30%;">
+                <a href="#tab" aria-controls="tab" role="tab" data-toggle="tab">Chapters</a>
+            </li>
+            <li role="presentation" style="width: 30%;">
+                <a href="#comment" aria-controls="tab" role="tab" data-toggle="tab">Comments</a>
+            </li>
+        </ul>
+    
+        <!-- Tab panes -->
+        <div class="tab-content" style="margin-top: 30px" >
+            <div role="tabpanel" class="tab-pane active" id="home">
+              <%= @story.description %>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="tab">
+              
+              <div class="row">
+                <% @chapters.each do |c| %>
+                  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <p> Chapter <%= c.chapter_number %>: <%= link_to  c.name, root_path, style:"text-decoration: none;" %><p>
+                  </div>
+                <% end %>
+              </div>
+              <div class="row">
+                <div class="col-md-4 col-md-offset-8">
+                  <%= will_paginate @chapters %>
+                </div>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="comment">...</div>
+        </div>
+    </div>
+    
+  </div>
+  
+</div>
