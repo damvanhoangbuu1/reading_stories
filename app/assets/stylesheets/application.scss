@@ -47,8 +47,16 @@ body {
 
 .image-size{
  width: 100%;
- height: 100%;
+ height: 160px;
 }
+.image-size-list{
+  width: 100%;
+  height: 200px;
+ }
+.big-image-size{
+  width: 100%;
+  height: 320px;
+ }
 
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -94,10 +102,6 @@ body {
   margin-top: 2px;
   text-align: center;
   font-family: 'Roboto Condensed',Tahoma,sans-serif;
-}
-.image-size{
-  width: 100%;
-  height: 100%;
 }
 
 /* Footer */

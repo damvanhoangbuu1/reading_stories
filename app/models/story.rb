@@ -6,6 +6,9 @@ class Story < ApplicationRecord
 
   enum status: {paused: 0, updating: 1, finished: 2}
 
+  scope :hot_stories, -> { order(views: :DESC).limit(13)}
+  scope :order_by_updated_at, -> { order(updated_at: :DESC)}
+
   after_initialize do
     self.status ||= :updating if new_record?
   end
