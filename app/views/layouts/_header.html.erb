@@ -17,7 +17,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Category <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <% categories.each do |i| %>
-                        <li><%= link_to  i.name, root_path %></li>
+                        <li><%= link_to  i.name, category_path(i) %></li>
                     <% end %>
                 </ul>
             </li>
