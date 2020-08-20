@@ -8,6 +8,7 @@ class Story < ApplicationRecord
 
   scope :hot_stories, -> { order(views: :DESC).limit(13)}
   scope :order_by_updated_at, -> { order(updated_at: :DESC)}
+  scope :order_by_views, -> { order(views: :DESC)}
 
   after_initialize do
     self.status ||= :updating if new_record?
