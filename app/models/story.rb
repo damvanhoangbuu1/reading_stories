@@ -13,4 +13,8 @@ class Story < ApplicationRecord
   after_initialize do
     self.status ||= :updating if new_record?
   end
+
+  def first_chap
+    self.chapters.first
+  end
 end
