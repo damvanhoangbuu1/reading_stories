@@ -10,7 +10,8 @@ class StoriesController < ApplicationController
   def show
     @story = Story.find_by(id: params[:id])
     if @story
-      @chapters = @story.chapters.order_by_created_at.paginate(:page => params[:page], :per_page => 45)
+      @category = @story.category
+      @chapters = @story.chapters.order_by_created_at
       @rating_count = @story.ratings.count
       if @rating_count != 0
         @rating_value = @story.ratings.average(:rating_number)
