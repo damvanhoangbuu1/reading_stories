@@ -1,19 +1,28 @@
 <% provide(:title, @category.name ) %>
 
-<div class="container">
-  <h3>
-    <%= @category.name.upcase %> >
-  </h3>
+<ol class="breadcrumb">
+  <li>
+    <%= link_to  "Home", root_path %>
+  </li>
+  <li class="active">
+    <%= @category.name %>
+  </li>
+</ol>
 
-  <div class="row">
-    <%= render  "shared/story" %>
+<div class="container">
+<h3>
+  <%= @category.name.upcase %> >
+</h3>
+
+<div class="row">
+  <%= render  "shared/story" %>
+</div>
+
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+    <%= will_paginate @stories %>
   </div>
-  
-  <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-      <%= will_paginate @stories %>
-    </div>
-  </div>
-  
-  
+</div>
+
+
 </div>

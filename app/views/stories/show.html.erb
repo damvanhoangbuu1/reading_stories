@@ -1,3 +1,13 @@
+<% provide(:title, @story.name ) %>
+
+<ol class="breadcrumb">
+  <li>
+    <%= link_to  "Home", root_path %>
+  </li>
+  <li class="active">
+    <%= @story.name %>
+  </li>
+</ol>
 
 <div class="container">
 
@@ -62,7 +72,7 @@
               <div class="row">
                 <% @chapters.each do |c| %>
                   <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                    <p> Chapter <%= c.chapter_number %>: <%= link_to  c.name, root_path, style:"text-decoration: none;" %><p>
+                    <%= link_to "Chapter #{c.chapter_number}: #{c.name}", chapter_path(c), style:"text-decoration: none;" %><p>
                   </div>
                 <% end %>
               </div>
