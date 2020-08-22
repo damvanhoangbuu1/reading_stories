@@ -1,0 +1,32 @@
+<% provide(:title, @chapter.name ) %>
+
+<ol class="breadcrumb">
+  <li>
+    <%= link_to  "Home", root_path %>
+  </li>
+  <li>
+    <%= link_to  @story.name, story_path(@story) %>
+  </li>
+  <li class="active">
+    Chapter <%= @chapter.chapter_number %>
+  </li>
+</ol>
+
+
+<div class="container">
+  <h2 style="text-align: center; color: #82A82D;">Chapter <%= @chapter.chapter_number %>: <%= @chapter.name %></h2>
+  
+  <%= render  "next_previos_btn" %>
+
+  <div class="panel panel-default">
+    <div class="panel-body" style="background-image: url(https://i.pinimg.com/originals/80/02/ed/8002ed21db6adc9111e42e4824e53c7e.jpg); color: black;" >
+       <%= @chapter.content %>
+       <%= @chapter.content %>
+       <%= @chapter.content %>
+       <%= @chapter.content %>
+    </div>
+  </div>
+  
+  <%= render  "next_previos_btn" %>
+
+</div>

@@ -3,5 +3,6 @@ Rails.application.routes.draw do
 
   root "static_page#home"
   resources :stories
-  resources :categories
+  resources :categories, only: [:show]
+  resources :chapters, only: [:show]
 end

@@ -1,0 +1,9 @@
+<div class="row">
+    <div class="col-md-4 col-md-offset-4" style="margin-bottom: 20px;">
+      <%= link_to  "Previos", chapter_path(@chapter.previos_chapter), class: "btn btn-default", style: "background-color: black; color: #82A82D; border: 2px solid #82A82D; width: 30%"  %>
+      <%= link_to  story_path(@story), class: "btn btn-default", style: "background-color: black; color: #82A82D; border: 2px solid #82A82D; width: 30%;" do %>
+        <span><i class="fas fa-list"></i></span>
+      <% end %>
+      <%= link_to  "Next", chapter_path(@chapter.next_chapter), class: "btn btn-default", style: "background-color: black; color: #82A82D; border: 2px solid #82A82D; width: 30%;"  %>
+    </div>
+  </div>
