@@ -11,6 +11,8 @@ User.create!(name: "Son kute",
              email: "sonkut3@railstutorial.org",
              role: :admin,
              sex: true,
+             password: "123123",
+             password_confirmation: "123123"
              )
 49.times do |n|
   name = Faker::Name.name
@@ -18,7 +20,9 @@ User.create!(name: "Son kute",
   User.create!(name: name,
   email: email,
   role: :user,
-  sex: true
+  sex: true,
+  password: "123123",
+  password_confirmation: "123123"
   )
 end
 
@@ -28,7 +32,9 @@ end
   User.create!(name: name,
   email: email,
   role: :converter,
-  sex: true
+  sex: true,
+  password: "123123",
+  password_confirmation: "123123"
   )
 end
 100.times do |n|
